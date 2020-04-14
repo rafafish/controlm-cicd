@@ -7,7 +7,7 @@
 	},
 	"BoEtoMoD": {
 		"Type": "Folder",
-		"Comment": "Code reviewed by OPS10 team",
+		"Comment": "Code reviewed by OPS11 team",
 		"DDO_S1_DOWNLOAD": {
 			"Type": "Job:FileTransfer",
 			"ConnectionProfileSrc": "BoE",
