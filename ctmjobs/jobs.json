@@ -3,7 +3,7 @@
 		"Application": "DevOpsLifecycle",
 		"SubApplication": "FileTransform",
 		"RunAs": "usrcontrolm",
-		"Host": "clm-aus-tobcvy"
+		"Host": "srvcontrolm04"
 	},
 	"TRANSFORM": {
 		"Type": "Folder",
