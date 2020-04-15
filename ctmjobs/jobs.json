@@ -5,45 +5,45 @@
 		"RunAs": "usrcontrolm",
 		"Host": "clm-aus-tobcvy"
 	},
-	"BoEtoMoD": {
+	"TRANSFORM": {
 		"Type": "Folder",
-		"Comment": "Code reviewed by OPS team",
-		"DDO_S1_DOWNLOAD": {
+		"Comment": "Code reviewed by Dev team",
+		"DOWNLOAD": {
 			"Type": "Job:FileTransfer",
-			"ConnectionProfileSrc": "Rebex",
-			"ConnectionProfileDest": "WinConnLocal",
+			"ConnectionProfileSrc": "SFTPConn",
+			"ConnectionProfileDest": "LocalConn",
 			"FileTransfers": [{
-				"Src": "~/input.csv",
-				"Dest": "/tmp/input.csv",
+				"Src": "~/Adesao/adesao_seguro.csv",
+				"Dest": "C:\labcontrolm\entrada",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
 			}]
 		},
-		"DDO_S1_TRANSFORM": {
+		"TRANSFORM": {
 			"Type": "Job:Command",
-			"Command": "python /home/v19p/transform.py /tmp/input.csv"
+			"Command": "python C:\scripts\transform.py C:\labcontrolm\entrada\adesao_seguro.csv"
 		},
-		"DDO_S1_VALIDATE": {
+		"VALIDATE": {
 			"Type": "Job:Command",
-			"Command": "python /home/v19p/validate.py /tmp/input.csv /home/v19p/results.json"
+			"Command": "python C:\scripts\validate.py C:\labcontrolm\entrada\adesao_seguro.csv C:\labcontrolm\saida\adesao_seguro.json"
 		},
-		"DDO_S1_UPLOAD": {
+		"UPLOAD": {
 			"Type": "Job:FileTransfer",
 			"ConnectionProfileSrc": "LocalConn",
-			"ConnectionProfileDest": "MoD",
+			"ConnectionProfileDest": "SFTPExternal",
 			"FileTransfers": [{
-				"Src": "/home/v19p/results.json",
-				"Dest": "~/results.json",
+				"Src": "C:\labcontrolm\saida\adesao_seguro.json",
+				"Dest": "~/Saida/adesao_seguro.json",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
 			}]
 		},
 		"Flow": {
 			"Type": "Flow",
-			"Sequence": ["DDO_S1_DOWNLOAD",
-			"DDO_S1_TRANSFORM",
-			"DDO_S1_VALIDATE",
-			"DDO_S1_UPLOAD"]
+			"Sequence": ["DOWNLOAD",
+			"TRANSFORM",
+			"VALIDATE",
+			"UPLOAD"]
 		}
 	}
 }
