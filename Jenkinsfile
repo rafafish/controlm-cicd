@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             environment {
                 CONTROLM_CREDS = credentials('controlm-testserver-creds')
-                ENDPOINT = 'https://srvcontrolm02:8446/automation-api'
+                ENDPOINT = 'https://srvcontrolm02:8443/automation-api'
             }
             steps {
                 sh '''
@@ -30,7 +30,7 @@ pipeline {
             }
             environment {
                 CONTROLM_CREDS = credentials('controlm-testserver-creds')
-                ENDPOINT = 'https://srvcontrolm02:8446/automation-api'
+                ENDPOINT = 'https://srvcontrolm02:8443/automation-api'
             }
             steps {
                 sh '''
@@ -50,7 +50,7 @@ pipeline {
             }
             environment {
                 CONTROLM_CREDS = credentials('controlm-prodserver-creds')
-                ENDPOINT = 'https://srvcontrolm02:8446/automation-api'
+                ENDPOINT = 'https://srvcontrolm02:8443/automation-api'
             }
             steps {
                 sh '''
