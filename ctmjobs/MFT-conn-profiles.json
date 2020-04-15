@@ -1,29 +1,31 @@
 {
 	"LocalConn": {
 			"Type": "ConnectionProfile:FileTransfer:Local",
-			"TargetAgent": "clm-aus-tobcvy",
-			"TargetCTM": "clm-aus-tobcvy",
-			"User": "v19p",
-			"Password": "e2kDuvel"
+			"TargetAgent": "srvcontrolm02",
+			"TargetCTM": "srvcontrolm02",
+			"User": "usrcontrolm",
+			"Password": "m@st219!CtrlM"
 	},
-	"BoE": {
-			"Type": "ConnectionProfile:FileTransfer:FTP",
-			"TargetAgent": "clm-aus-tobcvy",
-			"TargetCTM": "clm-aus-tobcvy",
-			"HostName": "ftp.boe.co.uk",
-			"User": "ftpuser",
+	"SFTPConn": {
+			"Type": "ConnectionProfile:FileTransfer:SFTP",
+			"TargetAgent": "srvcontrolm02",
+			"TargetCTM": "srvcontrolm02",
+			"HostName": "srvcontrolm04",
+			"Port": "1224",
+			"User": "usrparceiro",
 			"Password": {
-			"Secret": "boe-ftp-pass"
+			"Secret": "usrparceiro-pass"
 		}
 	},
-	"MoD": {
-			"Type": "ConnectionProfile:FileTransfer:FTP",
-			"TargetAgent": "clm-aus-tobcvy",
-			"TargetCTM": "clm-aus-tobcvy",
-			"HostName": "ftp.mod.gov",
+	"SFTPExternal": {
+			"Type": "ConnectionProfile:FileTransfer:SFTP",
+			"TargetAgent": "srvcontrolm02",
+			"TargetCTM": "srvcontrolm02",
+			"HostName": "52.226.128.74",
+			"Port": "1224",
 			"User": "ftpuser",
 			"Password": {
-			"Secret": "mod-ftp-pass"
+			"Secret": "ftpuser-pass"
 		}
 	}
 }

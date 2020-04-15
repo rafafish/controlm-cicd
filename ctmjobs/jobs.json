@@ -1,17 +1,17 @@
 {
 	"Defaults": {
-		"Application": "BoEtoMoD",
+		"Application": "DevOpsLifecycle",
 		"SubApplication": "FileTransform",
-		"RunAs": "v19p",
+		"RunAs": "usrcontrolm",
 		"Host": "clm-aus-tobcvy"
 	},
 	"BoEtoMoD": {
 		"Type": "Folder",
-		"Comment": "Code reviewed by OPS18 team",
+		"Comment": "Code reviewed by OPS team",
 		"DDO_S1_DOWNLOAD": {
 			"Type": "Job:FileTransfer",
-			"ConnectionProfileSrc": "BoE",
-			"ConnectionProfileDest": "LocalConn",
+			"ConnectionProfileSrc": "Rebex",
+			"ConnectionProfileDest": "WinConnLocal",
 			"FileTransfers": [{
 				"Src": "~/input.csv",
 				"Dest": "/tmp/input.csv",
