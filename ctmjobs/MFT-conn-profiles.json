@@ -1,15 +1,15 @@
 {
 	"LocalConn": {
 			"Type": "ConnectionProfile:FileTransfer:Local",
-			"TargetAgent": "srvcontrolm02",
-			"TargetCTM": "srvcontrolm02",
+			"TargetAgent": "srvcontrolm04",
+			"TargetCTM": "srvcontrolm04",
 			"User": "usrcontrolm",
 			"Password": "m@st219!CtrlM"
 	},
 	"SFTPConn": {
 			"Type": "ConnectionProfile:FileTransfer:SFTP",
-			"TargetAgent": "srvcontrolm02",
-			"TargetCTM": "srvcontrolm02",
+			"TargetAgent": "srvcontrolm04",
+			"TargetCTM": "srvcontrolm04",
 			"HostName": "srvcontrolm04",
 			"Port": "1224",
 			"User": "usrparceiro",
@@ -19,8 +19,8 @@
 	},
 	"SFTPExternal": {
 			"Type": "ConnectionProfile:FileTransfer:SFTP",
-			"TargetAgent": "srvcontrolm02",
-			"TargetCTM": "srvcontrolm02",
+			"TargetAgent": "srvcontrolm04",
+			"TargetCTM": "srvcontrolm04",
 			"HostName": "52.226.128.74",
 			"Port": "1224",
 			"User": "ftpuser",
