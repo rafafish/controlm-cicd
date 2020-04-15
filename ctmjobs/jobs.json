@@ -2,7 +2,7 @@
 	"Defaults": {
 		"Application": "DevOpsLifecycle",
 		"SubApplication": "FileTransform",
-		"RunAs": "usrcontrolm",
+		"RunAs": "ctmagent",
 		"Host": "srvcontrolm04"
 	},
 	"TRANSFORM": {
