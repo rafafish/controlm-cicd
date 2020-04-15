@@ -7,7 +7,7 @@
 	},
 	"TRANSFORM": {
 		"Type": "Folder",
-		"Comment": "Code reviewed by Dev team",
+		"Comment": "Code reviewed by Dev Team",
 		"DOWNLOAD": {
 			"Type": "Job:FileTransfer",
 			"ConnectionProfileSrc": "SFTPConn",
