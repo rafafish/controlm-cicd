@@ -14,25 +14,25 @@
 			"ConnectionProfileDest": "LocalConn",
 			"FileTransfers": [{
 				"Src": "~/Adesao/adesao_seguro.csv",
-				"Dest": "C:\labcontrolm\entrada",
+				"Dest": "C:/labcontrolm/entrada/",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
 			}]
 		},
 		"TRANSFORM": {
 			"Type": "Job:Command",
-			"Command": "python C:\scripts\transform.py C:\labcontrolm\entrada\adesao_seguro.csv"
+			"Command": "python C:/scripts/transform.py C:/labcontrolm/entrada/adesao_seguro.csv"
 		},
 		"VALIDATE": {
 			"Type": "Job:Command",
-			"Command": "python C:\scripts\validate.py C:\labcontrolm\entrada\adesao_seguro.csv C:\labcontrolm\saida\adesao_seguro.json"
+			"Command": "python C:/scripts/validate.py C:/labcontrolm/entrada/adesao_seguro.csv C:/labcontrolm/saida/adesao_seguro.json"
 		},
 		"UPLOAD": {
 			"Type": "Job:FileTransfer",
 			"ConnectionProfileSrc": "LocalConn",
 			"ConnectionProfileDest": "SFTPExternal",
 			"FileTransfers": [{
-				"Src": "C:\labcontrolm\saida\adesao_seguro.json",
+				"Src": "C:/labcontrolm/saida/adesao_seguro.json",
 				"Dest": "~/Saida/adesao_seguro.json",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
