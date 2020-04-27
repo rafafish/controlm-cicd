@@ -1,0 +1,53 @@
+{
+	"Defaults": {
+		"Application": "DevOpsLifecycle",
+		"SubApplication": "FileTransform",
+		"RunAs": "ctmagent",
+		"Host": "srvcontrolm04"
+	},
+	"TRANSFORM": {
+		"Type": "Folder",
+		"Comment": "Code reviewed by dev team",
+		"DOWNLOAD": {
+			"Type": "Job:FileTransfer",
+			"ConnectionProfileSrc": "SFTPConn",
+			"ConnectionProfileDest": "LocalConn",
+			"FileTransfers": [{
+				"Src": "~/Adesao/adesao_seguro.csv",
+				"Dest": "/home/ctmagent/files/in/",
+				"TransferOption": "SrcToDest",
+				"TransferType": "Binary"
+			}],
+			"RunAsDummy": true
+		},
+		"TRANSFORM": {
+			"Type": "Job:Command",
+			"Command": "python /home/ctmagent/transform.py /home/ctmagent/files/in/adesao_seguro.csv",
+			"RunAsDummy": true
+		},
+		"VALIDATE": {
+			"Type": "Job:Command",
+			"Command": "python /home/ctmagent/validate.py /home/ctmagent/files/in/adesao_seguro.csv /home/ctmagent/files/out/adesao_seguro.json",
+			"RunAsDummy": true
+		},
+		"UPLOAD": {
+			"Type": "Job:FileTransfer",
+			"ConnectionProfileSrc": "LocalConn",
+			"ConnectionProfileDest": "SFTPExternal",
+			"FileTransfers": [{
+				"Src": "/home/ctmagent/files/out/adesao_seguro.json",
+				"Dest": "~/Saida/adesao_seguro.json",
+				"TransferOption": "SrcToDest",
+				"TransferType": "Binary"
+			}],
+			"RunAsDummy": true
+		},
+		"Flow": {
+			"Type": "Flow",
+			"Sequence": ["DOWNLOAD",
+			"TRANSFORM",
+			"VALIDATE",
+			"UPLOAD"]
+		}
+	}
+}
