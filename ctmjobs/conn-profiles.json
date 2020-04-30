@@ -1,0 +1,36 @@
+{	
+	"MFTLocal": {
+			"Type": "ConnectionProfile:FileTransfer:Local",
+			"TargetAgent": "srvcontrolm02",
+			"TargetCTM": "srvcontrolm02",
+			"OsType": "Windows",
+			"User": "usrcontrolm",
+			"Password": {
+				"Secret": "usrcontrolm-pass"
+			}
+	},
+
+	"SFTPConn": {
+			"Type": "ConnectionProfile:FileTransfer:SFTP",
+			"TargetAgent": "srvcontrolm02",
+			"TargetCTM": "srvcontrolm02",
+			"HostName": "srvcontrolm04",
+			"Port": "22",
+			"User": "ctmagent",
+			"Password": "ctmagent"
+	},
+
+	"MSSQL16": {
+			"Type": "ConnectionProfile:Database:MSSQL",
+			"TargetAgent": "srvcontrolm02",
+			"Host": "srvcontrolm02",
+			"User": "dbuser",
+			"Port":"1433",
+			"Password": "dbpass",
+			"DatabaseName": "lab",
+			"DatabaseVersion": "2016",
+			"MaxConcurrentConnections": "9",
+			"ConnectionRetryTimeOut": "34",
+			"ConnectionIdleTime": "45"
+	}
+}

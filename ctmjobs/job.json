@@ -17,12 +17,14 @@
 				"Dest": "/home/ctmagent/convert/",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
-			}]
+			}],
+			"RunAsDummy": true
 		},
 		"DEV_ConvertFile": {
 			"Type": "Job:Command",
 			"Command": "python /home/ctmagent/apps/convert.py /home/ctmagent/convert/clientes.csv",
-			"Host": "srvcontrolm04"
+			"Host": "srvcontrolm04",
+			"RunAsDummy": true
 		},
 
 		"DEV_SendFileDB": {
@@ -34,7 +36,8 @@
 				"Dest": "C:\\labcontrolm\\entrada\\",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
-			}]
+			}],
+			"RunAsDummy": true
 		},
 
 		"DEV_LoadFileToDB": {
@@ -46,7 +49,8 @@
 			"Autocommit": "N",
 			"OutputExcecutionLog": "Y",
 			"OutputSQLOutput": "Y",
-			"SQLOutputFormat": "TXT"
+			"SQLOutputFormat": "TXT",
+			"RunAsDummy": true
 		 },
 
 		"Flow": {
