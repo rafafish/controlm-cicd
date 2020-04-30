@@ -13,7 +13,7 @@
 			"ConnectionProfileDest": "SFTPConn",
 			"Host": "srvcontrolm02",
 			"FileTransfers": [{
-				"Src": "/home/xxxxxx/files/in/clientes.csv",
+				"Src": "/home/ctmagent/files/in/clientes.csv",
 				"Dest": "/home/ctmagent/convert/",
 				"TransferOption": "SrcToDest",
 				"TransferType": "Binary"
