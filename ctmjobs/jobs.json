@@ -6,7 +6,7 @@
 	},
 	"CargaEmpresas": {
 		"Type": "Folder",
-		"Comment": "Faz download do arquivo CSV converte e importa no banco de Dados do Sistema X",
+		"Comment": "Faz download do arquivo CSV converte e importa no banco de dados do Sistema X",
 		"DEV_GetFile": {
 			"Type": "Job:FileTransfer",
 			"ConnectionProfileSrc": "SFTPConn",
